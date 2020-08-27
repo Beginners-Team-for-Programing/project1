@@ -1,0 +1,7 @@
+
+# composer install	//各環境下でcomposer.jsonをベースにcomposerを利用してインストールが必要
+
+// ".env.example"をコピーしてリネーム　→　".env"にする
+
+
+# php artisan key:generate	//これはまだ必要かどうかわからない・・・
