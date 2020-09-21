@@ -12,6 +12,10 @@ class HomeController extends Controller
         return view('contact');
     }
 
+    public function result(){
+        return view('result');
+    }
+
     public function store(Request $request)
     {
         $person = new Person;

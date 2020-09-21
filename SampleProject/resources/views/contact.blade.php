@@ -9,32 +9,45 @@
   <title>お問い合わせ</title>
 </head>
 <body>
-    <form>
+    <form action="./contact" method="post" class="form-horizontal">
+    {{ csrf_field() }}
+    
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <label for="name">名前</label>
-                <input type="text" class="form-control" id="name">
+                <input type="text" class="form-control" id="name" name="name" value="">
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <label for="tel">電話番号</label>
-                <input type="number" class="form-control" id="tel">
+                <input type="number" class="form-control" id="tel" name="tel" value="">
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <label for="mail">メールアドレス</label>
-                <input type="email" class="form-control" id="mail" aria-describedby="emailHelp">
+                <input type="email" class="form-control" id="mail" name="mail" value="" aria-describedby="emailHelp">
             </div>
         </div>
-
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <input type="submit" value="送信" onclick="return onButtonClick();">
+                <label for="message">お問い合わせ内容</label>
+                <textarea name="message" value=""></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input type="submit" name="confirm" value="確認" >
             </div>
         </div>
     </form>
+    
+    <?php
+        print_r($_POST);
+    ?>
+
+
 
           <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
