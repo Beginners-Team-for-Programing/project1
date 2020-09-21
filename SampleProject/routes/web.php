@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\BeginnerController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,10 +17,14 @@ use Illuminate\Support\Facades\Route;
 
 
 // コントローラーを使ってのviewの表示がうまく行かなかったので、コントローラー使ってませんwarnin
-Route::get('/access', function () {
-    return view('access');
-});
+// Route::get('/access', function () {
+//     return view('access');
+// });
 
-// Route::get('/access',[BeginnerController::class,'index']);
+Route::get('/access',[BeginnerController::class,'access']);
 
 // Route::get('access','BeginnerController@index');
+
+Route::get('/contact',[BeginnerController::class,'get']);
+
+Route::post('/contact',[BeginnerController::class,'post']);
