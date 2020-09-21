@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+// コントローラーを使ってのviewの表示がうまく行かなかったので、コントローラー使ってませんwarnin
+Route::get('/access', function () {
+    return view('access');
 });
+
+// Route::get('/access',[BeginnerController::class,'index']);
+
+// Route::get('access','BeginnerController@index');
