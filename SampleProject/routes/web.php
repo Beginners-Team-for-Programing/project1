@@ -21,10 +21,10 @@ use App\Http\Controllers\BeginnerController;
 //     return view('access');
 // });
 
-Route::get('/access',[BeginnerController::class,'access']);
+//Route::get('/access',[BeginnerController::class,'access']);
 
 // Route::get('access','BeginnerController@index');
 
-Route::get('/contact',[BeginnerController::class,'get']);
+Route::get('/contact',[BeginnerController::class,'contact']);
 
-Route::post('/contact',[BeginnerController::class,'post']);
+Route::post('/contact',[BeginnerController::class,'store'])->name('store');

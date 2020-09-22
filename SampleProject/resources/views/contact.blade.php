@@ -5,17 +5,22 @@
         <title>presia/recruit</title>
     </head>
     <body>
-        <p>{{$msg}}</p>
-        <form action="/contact" method="POST">
+    @if(isset($Person['name']))
+        {{$Person}}
+
+    @else
+        <form method="POST">
             <table>
                 @csrf
                 <tr><th>name: </th><td><input type="text" name="name" value=""></td></tr>
                 <tr><th>mail: </th><td><input type="text" name="mail" value=""></td></tr>
                 <tr><th>tel: </th><td><input type="text" name="tel" value=""></td></tr>
-                <tr><th>contents: </th><td><input type="text" name="contents" value=""></td></tr>
+                <tr><th>contents: </th><td><input type="text" name="content" value=""></td></tr>
                 <tr><th></th><td><input type="submit" value="send"></td></tr>
             </table>
+
         </form>
 
+    @endif
     </body>
 </html>
