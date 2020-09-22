@@ -32,7 +32,10 @@ class BeginnerController extends Controller
         $Person->content = $request->content;
         $Person->save();
 
-        return view('contact',$Person);
+        //$this->validate($request, $validateRules, $validateMessages);
+        //$data = $request->all();
+
+        return view('contact',compact('Person'));
 
         //return redirect(route('store', [
         //    'name' => $name
