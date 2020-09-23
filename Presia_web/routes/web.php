@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\BeginnerController;
 
+use App\Http\Controllers\ContactController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,14 +18,11 @@ use App\Http\Controllers\BeginnerController;
 */
 
 
-// Route::get('/access', function () {
-//     return view('access');
-// });
+Route::get('/access', function () {
+    return view('access');
+});
 
-Route::get('/access',[BeginnerController::class,'access']);
 
-// Route::get('access','BeginnerController@index');
+Route::get('/contact',[ContactController::class,'get']);
 
-Route::get('/contact',[BeginnerController::class,'get']);
-
-Route::post('/result',[BeginnerController::class,'post']);
+Route::post('/result',[ContactController::class,'create']);
