@@ -11,7 +11,7 @@ use App\Models\Contact;
 class ContactController extends Controller
 {
     public function get(Request $request) {
-        return view('contact',['msg'=>'下記のフォームを入力してください。']);
+        return view('contact');
     }
 
     public function create(beginnerRequest $request) {
@@ -22,7 +22,7 @@ class ContactController extends Controller
         $contact -> tel = $request-> tel;
         $contact -> contents = $request-> contents;
         $contact ->save();
-        return view('result',['msg'=>'お問い合わせを受付しました。ご連絡まで少々お待ちくださいませ。']);
+        return view('contact',compact('contact'));
     }
 
 }

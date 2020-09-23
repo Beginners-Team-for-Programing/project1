@@ -17,11 +17,17 @@ use App\Http\Controllers\ContactController;
 |
 */
 
+Route::get('/', function (){
+    return view('index');
+});
 
-Route::get('/access', function () {
+Route::get('/access', function (){
     return view('access');
 });
 
+Route::get('/recruit', function(){
+    return view('recruit');
+});
 
 Route::get('/contact',[ContactController::class,'get']);
 
