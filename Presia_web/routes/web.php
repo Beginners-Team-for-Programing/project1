@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\BeginnerController;
 
+use App\Http\Controllers\ContactController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,16 +17,18 @@ use App\Http\Controllers\BeginnerController;
 |
 */
 
+Route::get('/', function (){
+    return view('index');
+});
 
-// コントローラーを使ってのviewの表示がうまく行かなかったので、コントローラー使ってませんwarnin
-// Route::get('/access', function () {
-//     return view('access');
-// });
+Route::get('/access', function (){
+    return view('access');
+});
 
-Route::get('/access',[BeginnerController::class,'access']);
+Route::get('/recruit', function(){
+    return view('recruit');
+});
 
-// Route::get('access','BeginnerController@index');
+Route::get('/contact',[ContactController::class,'get']);
 
-Route::get('/contact',[BeginnerController::class,'get']);
-
-Route::post('/contact',[BeginnerController::class,'post']);
+Route::post('/result',[ContactController::class,'create']);
