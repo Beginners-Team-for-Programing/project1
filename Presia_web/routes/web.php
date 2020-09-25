@@ -17,18 +17,27 @@ use App\Http\Controllers\ContactController;
 |
 */
 
-Route::get('/', function (){
+Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/access', function (){
+Route::get('/access', function () {
     return view('access');
 });
 
-Route::get('/recruit', function(){
+Route::get('/recruit', function () {
     return view('recruit');
 });
 
-Route::get('/contact',[ContactController::class,'get']);
+Route::get('/company', function () {
+    return view('company');
+});
 
-Route::post('/result',[ContactController::class,'create']);
+Route::get('/pro', function () {
+    return view('pro');
+});
+
+
+Route::get('/contact', [ContactController::class, 'get']);
+
+Route::post('/result', [ContactController::class, 'create']);
