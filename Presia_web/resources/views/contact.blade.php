@@ -5,10 +5,18 @@
         <title>presia/recruit</title>
     </head>
     <body>
-    @if(isset($contact['name']))
-        <p>お問い合わせを受付しました。ご連絡まで少々お待ちくださいませ。</p>
-        {{$contact}}
 
+    <!-- お問い合わせ内容を入力後に表示する場合こちらを表示   -->
+    @if(isset($contact['name']))
+    <p>お問い合わせを受付しました。ご連絡まで少々お待ちくださいませ。</p>
+    <ul style="list-style-type:none">
+        <li>お名前：<?php echo $contact['name']  ?></li><br>
+        <li>メールアドレス：<?php echo $contact['mail']  ?></li><br>
+        <li>電話番号：<?php echo $contact['tel']  ?></li><br>
+        <li>お問い合わせ内容：<?php echo $contact['contents']  ?></li><br>
+    </ul>
+
+    <!-- 初めはこちらを表示   -->
     @else
         <h1>お問い合わせフォーム</h1>
         <p>サービスや採用に関するお問い合わせは、こちらからお願いいたします。</p>
