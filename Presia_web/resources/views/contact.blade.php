@@ -17,7 +17,7 @@
         @if(count($errors) > 0)
             <p>入力に問題があります。再度入力してください。</p>
         @endif
-        <form action="/result" method="POST">
+        <form action="/confirm" method="POST">
             <table>
                 @csrf
                 @error('name')
