@@ -7,7 +7,6 @@
     <body>
     @if(isset($contact['name']))
         <p>お問い合わせを受付しました。ご連絡まで少々お待ちくださいませ。</p>
-        {{$contact}}
 
     @else
         <h1>お問い合わせフォーム</h1>
@@ -24,17 +23,17 @@
                     <tr><th>ERROR</th>
                     <td>{{$message}}</td></tr>
                 @enderror
-                <tr><th>お名前: </th><td><input type="text" name="name" value="{{old('name')}}"></td></tr>
+                <tr><th>お名前: </th><td><input type="text" name="name" value="{{old('name')}}"placeholder="吉谷瞳"></td></tr>
                 @error('mail')
                     <tr><th>ERROR</th>
                     <td>{{$message}}</td></tr>
                 @enderror
-                <tr><th>メールアドレス: </th><td><input type="text" name="mail" value="{{old('mail')}}"></td></tr>
+                <tr><th>メールアドレス: </th><td><input type="text" name="mail" value="{{old('mail')}}"placeholder="〇〇〇〇@presia.co.jp"></td></tr>
                 @error('tel')
                     <tr><th>ERROR</th>
                     <td>{{$message}}</td></tr>
                 @enderror
-                <tr><th>電話番号: </th><td><input type="text" name="tel" value="{{old('tel')}}"></td></tr>
+                <tr><th>電話番号: </th><td><input type="text" name="tel" value="{{old('tel')}}"placeholder="09012345678"></td></tr>
                 @error('contents')
                     <tr><th>ERROR</th>
                     <td>{{$message}}</td></tr>
