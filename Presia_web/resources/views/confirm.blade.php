@@ -6,6 +6,11 @@
     </head>
     <body>
         <form method="POST" action=/result>
+            <input type="hidden" name="name" value={{$inputs['name']}}>
+            <input type="hidden" name="mail" value=<?php echo $inputs['mail'];?> >
+            <input type="hidden" name="tel" value={{$inputs['tel']}}>
+            <input type="hidden" name="contents" value={{$inputs['contents']}}>
+
         @csrf
 
 
